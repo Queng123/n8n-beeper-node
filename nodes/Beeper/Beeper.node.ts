@@ -471,7 +471,7 @@ export class Beeper implements INodeType {
 					requestOptions,
 				);
 
-				let responseData = response as IDataObject;
+				const responseData = response as IDataObject;
 
 				if ((resource === 'chat' || resource === 'message') && operation === 'list') {
 					const options = this.getNodeParameter('options', i, {}) as IDataObject;
