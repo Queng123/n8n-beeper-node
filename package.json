@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-beeper",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "n8n node to interact with Beeper Desktop API for managing chats and messages",
     "license": "MIT",
     "homepage": "",
