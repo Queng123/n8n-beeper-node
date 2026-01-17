@@ -388,10 +388,6 @@ export class Beeper implements INodeType {
 				if (resource === 'chat') {
 					if (operation === 'list') {
 						endpoint = '/v1/chats';
-						const options = this.getNodeParameter('options', i, {}) as IDataObject;
-						if (options.limit) {
-							qs.count = options.limit;
-						}
 					}
 
 					if (operation === 'get') {
@@ -442,10 +438,6 @@ export class Beeper implements INodeType {
 					if (operation === 'list') {
 						const chatId = this.getNodeParameter('chatId', i) as string;
 						endpoint = `/v1/chats/${encodeURIComponent(chatId)}/messages`;
-						const options = this.getNodeParameter('options', i, {}) as IDataObject;
-						if (options.limit) {
-							qs.count = options.limit;
-						}
 					}
 
 					if (operation === 'search') {
@@ -479,8 +471,28 @@ export class Beeper implements INodeType {
 					requestOptions,
 				);
 
+				let responseData = response as IDataObject;
+
+				if ((resource === 'chat' || resource === 'message') && operation === 'list') {
+					const options = this.getNodeParameter('options', i, {}) as IDataObject;
+					const limit = options.limit as number | undefined;
+
+					if (responseData.items && Array.isArray(responseData.items)) {
+						let items = responseData.items as IDataObject[];
+						if (limit && items.length > limit) {
+							items = items.slice(0, limit);
+						}
+						const executionData = this.helpers.constructExecutionMetaData(
+							this.helpers.returnJsonArray(items),
+							{ itemData: { item: i } },
+						);
+						returnData.push(...executionData);
+						continue;
+					}
+				}
+
 				const executionData = this.helpers.constructExecutionMetaData(
-					this.helpers.returnJsonArray(response as IDataObject),
+					this.helpers.returnJsonArray(responseData),
 					{ itemData: { item: i } },
 				);
 
