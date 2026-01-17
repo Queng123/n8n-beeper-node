@@ -390,7 +390,7 @@ export class Beeper implements INodeType {
 						endpoint = '/v1/chats';
 						const options = this.getNodeParameter('options', i, {}) as IDataObject;
 						if (options.limit) {
-							qs.limit = options.limit;
+							qs.count = options.limit;
 						}
 					}
 
@@ -444,7 +444,7 @@ export class Beeper implements INodeType {
 						endpoint = `/v1/chats/${encodeURIComponent(chatId)}/messages`;
 						const options = this.getNodeParameter('options', i, {}) as IDataObject;
 						if (options.limit) {
-							qs.limit = options.limit;
+							qs.count = options.limit;
 						}
 					}
 
