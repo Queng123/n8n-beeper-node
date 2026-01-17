@@ -2,7 +2,7 @@
 
 This is an n8n community node. It lets you use **Beeper** in your n8n workflows.
 
-[Beeper](https://beeper.com) is a unified messaging app that brings all your chat networks (iMessage, WhatsApp, Telegram, Signal, Slack, Discord, and more) into a single inbox. This node connects to the Beeper Desktop API to automate your messaging workflows.
+[Beeper](https://beeper.com) is a unified messaging app that brings all your chat networks (iMessage, WhatsApp, Telegram, Instagram, Slack, Discord, and more) into a single inbox. This node connects to the Beeper Desktop API to automate your messaging workflows.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 
