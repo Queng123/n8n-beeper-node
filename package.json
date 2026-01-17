@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-beeper",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "n8n node to interact with Beeper Desktop API for managing chats and messages",
     "license": "MIT",
     "homepage": "",
@@ -15,15 +15,15 @@
         "type": "git",
         "url": "https://github.com/Queng123/n8n-nodes-beeper.git"
     },
-   "scripts": {
-		"build": "n8n-node build",
-		"build:watch": "tsc --watch",
-		"dev": "n8n-node dev",
-		"lint": "n8n-node lint",
-		"lint:fix": "n8n-node lint --fix",
-		"release": "n8n-node release",
-		"prepublishOnly": "n8n-node prerelease"
-	},
+    "scripts": {
+        "build": "n8n-node build",
+        "build:watch": "tsc --watch",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "release": "n8n-node release",
+        "prepublishOnly": "n8n-node prerelease"
+    },
     "files": [
         "dist"
     ],
