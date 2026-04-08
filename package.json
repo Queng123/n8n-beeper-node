@@ -3,7 +3,7 @@
     "version": "2.0.1",
     "description": "n8n node to interact with Beeper Desktop API for managing chats and messages",
     "license": "MIT",
-    "homepage": "",
+    "homepage": "https://github.com/Queng123/n8n-nodes-beeper",
     "keywords": [
         "n8n-community-node-package"
     ],

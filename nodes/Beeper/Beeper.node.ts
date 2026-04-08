@@ -6,8 +6,9 @@ import type {
 	IHttpRequestMethods,
 	IHttpRequestOptions,
 	IDataObject,
+	JsonObject,
 } from 'n8n-workflow';
-import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
+import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
 
 export class Beeper implements INodeType {
 	description: INodeTypeDescription = {
@@ -505,7 +506,7 @@ export class Beeper implements INodeType {
 					});
 					continue;
 				}
-				throw new NodeOperationError(this.getNode(), error as Error, { itemIndex: i });
+				throw new NodeApiError(this.getNode(), error as JsonObject, { itemIndex: i });
 			}
 		}
 
