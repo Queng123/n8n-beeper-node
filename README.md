@@ -89,7 +89,7 @@ Sending too many messages may result in account suspension by the messaging netw
 
 ## Version history
 
-### 0.1.0
+### 2.0.1
 
 Initial release with:
 - Account operations: List
